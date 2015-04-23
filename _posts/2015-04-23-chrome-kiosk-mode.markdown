@@ -6,9 +6,7 @@ categories: mac kiosk chrome
 ---
 こんな感じのシェルを *.sh* ファイルを作っておいて、
 
-```zsh
-open "/Applications/Google Chrome.app" --args --kiosk --disable-background-mode "http://hisasann.com/" --user-data-dir=/Users/[UserName]/Library/Application\ Support/Google/Chrome/kioskmode
-```
+<script src="https://gist.github.com/hisasann/3d55441c7f1e59df2171.js"></script>
 
 Macのログイン時の起動項目に追加するだけ。
 
