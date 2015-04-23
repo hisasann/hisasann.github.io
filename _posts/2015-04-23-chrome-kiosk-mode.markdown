@@ -6,7 +6,7 @@ categories: mac kiosk chrome
 ---
 こんな感じのシェルを *.sh* ファイルを作っておいて、
 
-```shell
+```shell-session
 open "/Applications/Google Chrome.app" --args --kiosk --disable-background-mode "http://hisasann.com/" --user-data-dir=/Users/[UserName]/Library/Application\ Support/Google/Chrome/kioskmode
 ```
 
