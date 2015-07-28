@@ -1,0 +1,117 @@
+---
+layout: post
+title:  "MacOSでOpenNI2.2・NiTE2.2を使ってXtionを動かしてみた"
+date:   2015-07-28 15:45:16
+categories: mac opneni2 nite2 xtion
+---
+
+**Xtion** を使って、OpneNIを体感してみましたが、思いのほかハマったのでメモメモ。
+
+[OpenNI SDK (open-source)-Download | OpenNI](http://openni.ru/openni-sdk/index.html) からOpenNI2をDLしてきてセットアップしてみたが、結果的にうまくいかなかった。
+
+とりあえずやったことを書いておく。
+
+## OpenNI2をDLしてきて試すパターン（うまくいかなかった）
+
+DLしてきたOpenNI2を解凍して、適当に配置。
+
+```bash
+$ sudo ./install.sh
+```
+
+すると、 **OpenNIDevEnvironment** というファイルが出来るので、./zshrc に追記。
+
+```bash
+$ source 適当なパス/OpenNIDevEnvironment
+```
+
+**OpenNI2/Samples/Bin** の下にSampleがいっぱいあるので、SimpleViewerを実行してみる。
+
+```bash
+$ ./SimpleViewer
+```
+
+だが、うまくxtionを認識してくれない。
+
+```bash
+$ Bin  ./SimpleViewer
+After initialization:
+
+SimpleViewer: Device open failed:
+	DeviceOpen using default: no devices found
+```
+
+## brewからOpenNI2をインストールするパターン（うまくいった）
+
+brewから入れるのすごく楽ちん！
+
+```bash
+brew tap homebrew/science
+brew tap totakke/openni2
+brew install openni2
+brew install openni2-freenectdriver
+```
+
+コンソールにも出ますが、以下のように./zshrcに追記。
+
+```bash
+export OPENNI2_INCLUDE=/usr/local/include/ni2
+export OPENNI2_REDIST=/usr/local/lib/ni2
+```
+
+サンプルプログラムを実行。
+
+```bash
+cd `brew --prefix`/share/openni2/tools
+./NiViewer
+```
+
+これで、起動すればOK！
+
+via
+
+[simple-openni - OpenNI library for Processing - Google Project Hosting](https://code.google.com/p/simple-openni/)
+
+## Nite2をインストールする
+
+Nite2がWebで検索しても、本家っぽいところが見つからないので、以下からDL。
+
+しかし、samplesディレクトリがないので、試すことが出来なかった！
+
+[Raw/NiTE-MacOSX-x64-2.2 at master · voxels/Raw](https://github.com/voxels/Raw/tree/master/NiTE-MacOSX-x64-2.2)
+
+とりあえず、インストールぐらいはしておこう。
+
+```bash
+$ sudo ./install.sh
+```
+
+## simple-openniで遊んでみる
+
+OpenNi2のサンプルだけでは、手の認識などを体感できないので、 **simple-openni** で遊んでみる。
+
+ちなみに、こちらはOpenNI2・Nite2を同封しているが、ぼくの場合は、上記のようにOpenNI2をbrewでインストールしないと動かなかった。
+
+Nite2は問題なし。
+
+[simple-openni - OpenNI library for Processing - Google Project Hosting](https://code.google.com/p/simple-openni/)
+
+Processingが入っていなければ事前にインストールし、以下の手順を実行するだけ。（Macの場合）
+
+    Download Processing >= 2.0 for your platform and install it
+    Go to the menu: Sketch-> Import Library...-> Add Library...
+    Select and install SimpleOpenNI
+
+simple-openniにはサンプルコードが同封されているので、
+
+    examples/OpenNI/
+
+の中から適当なファイルを開いて、コードをProcessingのエディタに貼り付けて実行する。
+
+ためしに、Hands.pdeを実行すると、手を認識してくれる。
+
+<p align="center">
+  <img src="/public/images/blog/sketch_150728a.png">
+</p>
+
+ウホウホ！
