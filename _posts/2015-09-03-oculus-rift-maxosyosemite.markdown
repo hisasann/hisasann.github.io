@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "MacOSYosemiteでOculus Rihtを動かしてみた（2015/09/03時点）"
+title:  "MacOSYosemiteでOculus Riftを動かしてみた（2015/09/03時点）"
 date:   2015-09-03 15:45:16
 categories: mac oculus 
 ---
