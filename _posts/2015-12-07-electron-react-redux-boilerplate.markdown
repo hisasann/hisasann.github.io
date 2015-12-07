@@ -5,6 +5,8 @@ date:   2015-12-07 15:45:16
 categories: node.js babel6 es6 react redux webpack gulp electron
 ---
 
+[hisasann/electron-react-redux-boilerplate](https://github.com/hisasann/electron-react-redux-boilerplate)
+
 ## はじめに
 
 Node.js + Babel 6 + React + Redux + Webpack + Gulp + Electron
@@ -617,3 +619,4 @@ Wordpress.comがReact/Reduxを使って全面アップデートしたOSSプロ�
 
 ( ・∀・)ｲｲ!!
 
+[hisasann/electron-react-redux-boilerplate](https://github.com/hisasann/electron-react-redux-boilerplate)
