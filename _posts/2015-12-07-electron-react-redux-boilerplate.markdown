@@ -146,7 +146,7 @@ render(
 )
 ```
 
-ここで大切なのが **<Provider>** です
+ここで大切なのが **Provider** です
 
 1. rootのcomponentとしてReactコンポーネントをwrapします
 
@@ -466,12 +466,14 @@ export default connect(
 
 故に、configureStore.jsで
 
+```javascript
 const finalCreateStore = compose(
   applyMiddleware(thunk, logger()),
   reduxReactRouter({ routes, createHistory }),
   applyMiddleware(createLogger()),
   DevTools.instrument()
 )(createStore)
+```
 
 のように渡す必要がある
 
