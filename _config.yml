@@ -1,3 +1,5 @@
+gems: [jekyll-paginate]
+
 # Site settings
 title: DJレモンサワーのレモン日記
 email: ""
