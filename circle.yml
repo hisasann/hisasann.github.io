@@ -1,0 +1,13 @@
+general:
+machine:
+  environment:
+    USER_NAME: hisasann
+    USER_EMAIL: hisasann@gmail.com
+  ruby:
+    version: 2.1.0
+dependencies:
+    override:
+      - bundle install --without production --deployment
+test:
+  override:
+    - bundle exec jekyll build --trace
