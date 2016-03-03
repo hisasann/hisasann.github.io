@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "kinect2をelectron上で動かすまでの記録"
-date:   2016-03-03 15:45:16
+date:   2016-03-03 15:00:00
 categories: document
 ---
 
