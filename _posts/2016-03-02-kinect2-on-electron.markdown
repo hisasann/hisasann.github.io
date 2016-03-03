@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "kinect2をelectron上で動かすまでの記録"
-date:   2016-03-03 12:00:00
+date:   2016-03-02 12:00:00
 categories: kinect2 electron python node-gyp visual-studio node.js
 ---
 
@@ -134,4 +134,3 @@ console.log(os.platform(), os.arch());
 
 [node.js - node gyp error TRACKER : error TRK0005: Failed to locate: "CL.exe". The system cannot find the file specified - Stack Overflow](http://stackoverflow.com/questions/33183161/node-gyp-error-tracker-error-trk0005-failed-to-locate-cl-exe-the-system-c)
 
-🍜
