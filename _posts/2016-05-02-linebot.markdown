@@ -1,0 +1,104 @@
+---
+layout: post
+title:  "Linebotで遊んでみた"
+date:   2016-05-01 12:00:00
+categories: line linebot node.js heroku
+---
+
+<p align="center">
+  <img src="/public/images/blog/IMG_0871.PNG">
+</p>
+
+[BOT API Trial Accountのご紹介 | LINE Business Center](https://business.line.me/services/products/4/introduction)
+
+ちょっと前に **Linebot** が 10,000 名まで無料で試せるようになっていたのですが、今サイトを見ると特にそういった記載がないので、誰でもできるようになったんですかね。
+
+## はじめに
+
+基本的には、
+
+[LINE BOT API Trialでできる全ての事を試してみた - Qiita](http://qiita.com/betchi/items/8e5417dbf20a62f2239d)
+
+こちらを見ながら **node.js** で書いてみました。
+
+## サーバーは heroku にした
+
+Line からの callback を受け付けるには **https** でないとダメなようなので、 heroku を使いました。
+
+この場合、サーバーの IP アドレスをホワイトリストに入れる必要があるので、 **Fixie** というプラグインを導入。
+
+Fixie のプラグインを入れたら、 heroku のリンクをクリックし、 [Fixie](https://dashboard.usefixie.com/#/account) にアクセスすると Outboud IPs が見れるようになる。
+
+あとは、この2つの IP アドレスを Line 側の **Server IP Whitelist** に入れるだけ。
+
+## Linebot のアカウント
+
+* Channel ID
+* Channel Secret
+* MID
+
+この3つが必要なので、 Line の developer サイトからコピーしておく。
+
+## node.js でテキストを送ってみる（Express版）
+
+bot 側で友達からのメッセージを受信した場合に、送り返すターゲットを取得しておいて、単発でテキストを送っています。
+
+<script src="https://gist.github.com/hisasann/177f41e9f8c45fbeedcc309120b9810a.js"></script>
+
+以下が固定の値、ここをミスるとうまく動かない。
+
+```javascript
+'toChannel': 1383378250, // fixed
+'eventType':'138311608800106203', // fixed
+```
+
+## node.js で複数の情報をいっぺんに送ってみる（Express版）
+
+こっちは、一気に
+
+* テキスト
+* スタンプ
+* 画像
+
+を送っています。
+
+<script src="https://gist.github.com/hisasann/cc59b36431b487494716497de4bf3a6d.js"></script>
+
+単発のほうを3回実行しても同じなんですが、非同期ゆえに、メッセージの順番が確保されないので、順番に意味があるのならこっちのパターンですかね。
+
+以下が固定の値、ここをミスるとうまく動かない。
+
+```javascript
+'toChannel': 1383378250, // fixed
+'eventType':'140177271400161403', // fixed, for multiple messages
+```
+
+## API reference
+
+固定の値が結構あるので、ミスってハマるケースがありますが、とりわけ簡単ですね。
+
+[LINE Developers - BOT API - API reference](https://developers.line.me/bot-api/api-reference)
+
+## SDK
+
+すでに、いろんな言語での SDK があるようです。
+
+**golang** の場合。
+
+[line/line-bot-sdk-go](https://github.com/line/line-bot-sdk-go)
+
+まだ、 node.js 版がないですねー
+
+## 何か作りたいが何か面白いものは
+
+bot なので、ワードをもとに検索するみたいなのを一瞬作ろうと思ったんですが、すでにいろんな方が作ってそうだし悩ましい〜
+
+今後何か作りたいので、
+
+[hisasann/line-bot-hisasann](https://github.com/hisasann/line-bot-hisasann)
+
+リポジトリだけは作った！
+
+## 参考リンク
+
+[Nodejs+LINE BOTでレストラン検索 - Qiita](http://qiita.com/Enta/items/45d5295e023e24e9ff0b)
