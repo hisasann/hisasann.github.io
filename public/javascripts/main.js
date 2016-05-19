@@ -1,1 +1,1 @@
-location.hash = '#🍜'; // ramen push to location hash
+// location.hash = '#🍜'; // ramen push to location hash
