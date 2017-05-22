@@ -18,9 +18,8 @@ paginate_path: "page/:num"
 permalink: /:year/:month/:day/:title/
 
 # Build settings
-#markdown: kramdown
 markdown: redcarpet
 redcarpet:
-  extensions: [tables,autolink,strikethrough]
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "with_toc_data"]
 
 exclude: [vendor]
