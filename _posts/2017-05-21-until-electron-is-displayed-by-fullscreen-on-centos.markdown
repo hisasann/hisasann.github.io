@@ -14,7 +14,7 @@ electron を CentOS 上で Fullscreen 表示する、つまりサイネージ用
 
 ## VirtualBox をインストールする
 
-[Oracle VM VirtualBox - Downloads | Oracle Technology Network | Oracle](http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html?ssSourceSiteId=otnjp)
+[Oracle VM VirtualBox Downloads Oracle Technology Network Oracle](http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html?ssSourceSiteId=otnjp)
 
 こちらから VirtualBox をインストールします。
 
