@@ -1,0 +1,141 @@
+---
+layout: post
+title:  "子プロセス内でfs.readFileに相対パスを渡したときの挙動について"
+date:   2017-07-30 12:00:00
+categories: node.js windows
+---
+
+## まえがき
+
+Windows 環境で親プロセスから子プロセスを child_process 経由で起動して、子プロセスのほうで以下のようなコードを書いた場合の挙動についてメモしておきます。
+
+```javascript
+fs.readFile('./hoge.json');
+```
+
+ちょっとハマったの node.js のコードを見に行ってみました。
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://t.co/RXfOpVWUIq">https://t.co/RXfOpVWUIq</a> が内部で使っている path._makeLong って、child_process 経由で開かれた子プロセスで実行すると parent のパスを返すときがあるのって仕様なのかな。</p>&mdash; hisasann🍜 (@hisasann) <a href="https://twitter.com/hisasann/status/902398564550164481">2017年8月29日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">たとえば fs.readFile に &#39;./a.txt&#39; みたいに渡しちゃうと _makeLong は &#39;parent のパス/a.txt&#39; を返しちゃって、そんなファイルはないって言われる。</p>&mdash; hisasann🍜 (@hisasann) <a href="https://twitter.com/hisasann/status/902399133272510464">2017年8月29日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">子プロセスで path.resolve(__dirname, &#39;a.txt&#39;) とパスを組み上げてから readFile に渡せば問題はない。&#13;ちなみに windows 環境より。</p>&mdash; hisasann🍜 (@hisasann) <a href="https://twitter.com/hisasann/status/902399406598627328">2017年8月29日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">あー、なるほど、 process.cwd() を相対パスの場合見に行ってるのか。だから子プロセスを起動したワーキングディレクトリのパスが返ってきてしまう。</p>&mdash; hisasann🍜 (@hisasann) <a href="https://twitter.com/hisasann/status/902405319933935616">2017年8月29日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+## fs.readFile が相対パスを解決するまでの流れ
+
+```javascript
+binding.open(pathModule._makeLong(path),
+           stringToFlags(options.flag || 'r'),
+           0o666,
+           req);
+```
+
+[node/fs.js at master · nodejs/node](https://github.com/nodejs/node/blob/master/lib/fs.js#L364)
+
+```javascript
+_makeLong: function _makeLong(path) {
+  // Note: this will *probably* throw somewhere.
+  if (typeof path !== 'string')
+    return path;
+
+  if (path.length === 0) {
+    return '';
+  }
+
+  const resolvedPath = win32.resolve(path);
+}
+```
+
+[node/path.js at master · nodejs/node](https://github.com/nodejs/node/blob/master/lib/path.js#L686)
+
+```javascript
+for (var i = arguments.length - 1; i >= -1; i--) {
+  var path;
+  if (i >= 0) {
+    path = arguments[i];
+  } else if (!resolvedDevice) {
+    // ここに入る
+    path = process.cwd();
+  }
+}
+```
+
+win32.resolve については [win32-in-path.js](https://gist.github.com/hisasann/2c258d2ccec463a100d571b9cca28c7a) ここに抜き出してみました。
+
+結果的には、 **process.cwd()** を path にセットする部分が呼ばれて、子プロセスの起動元となるワーキングディレクトリがセットされ、相対パスなのでカレントから見に行ってくれると思いきや、そうはなりません。
+
+[node/path.js at master · nodejs/node](https://github.com/nodejs/node/blob/master/lib/path.js#L189)
+
+
+## サンプルコード
+
+### parent
+
+```javascript
+const childProcess = require('child_process');
+
+console.log('parent __dirname: ', __dirname);
+
+let p = childProcess.spawn('node', ['../child/child.js'], {
+  detached: true,
+  stdio: ['ignore', 'ignore', 'ignore']
+});
+p.unref();
+```
+
+### child
+
+```javascript
+const log = require('electron-log-rotate');
+const fs = require('fs');
+const path = require('path');
+const win32 = require('./lib/win32');
+
+log.setup({
+  appName: 'node-child_process'
+});
+
+log.log('child __dirname: ' + __dirname);
+log.log('path._makeLong: ' + path._makeLong('./package.json'));
+log.log('win32.resolve: ' + win32.resolve('./package.json'));
+log.log('process.cwd(): ' + process.cwd());
+
+try {
+  log.log('fs.readFile start');
+  // このように相対パスにせずに絶対パスにしてから fs などに渡すと安全
+  // fs.readFile(path.resolve(__dirname, 'package.json'), (err, data) => {
+  fs.readFile('./package.json', (err, data) => {
+    if (err) {
+      log.log(err);
+      return;
+    }
+
+    log.log(data);
+    log.log('fs.readFile end');
+  });
+} catch (e) {
+  log.log(e);
+}
+```
+
+
+## あとがき
+
+基本的には、相対パスはなるべく使わずに絶対パスにしてからファイルを読んだりしたほうが安全かと思います。
+
+ためしに親となる electron の exe から child_process 経由で子となる electron の exe をキックして、親を閉じたあとに子のほうで
+
+```javascript
+fs.readFile('./package.json');
+```
+
+してみましたが、結果は同じでした、 **process.cwd()** は親プロセスが生きているかどうかで判断などはせずに起動元のワーキングディレクトリを記憶しているんですね。
+
+node.js のライブラリなどを提供する場合、こういったパスを意識しておかないと、 child_process 経由で起動したときに意図した通りに動かない場合が出てきそうなので、気をつけたいところです。
