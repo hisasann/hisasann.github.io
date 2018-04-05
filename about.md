@@ -9,7 +9,7 @@ permalink: /about/
 </p>
 
 
-Hi, My name is Yoshiyuki Hisamatsu.
+Hi, My name is Yoshiyuki Hisamatsu a.k.a hisasann.
 
 I am a programmer in Tokyo.
 
