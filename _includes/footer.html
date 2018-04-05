@@ -55,6 +55,47 @@
           <li><a href="http://hisasann.com/housetect/">HouseTect</a></li>
           <li><a href="http://tech.hisasann.com/">ぼくのコード保存庫</a></li>
         </ul>
+        {% if include.tag_names %}
+          {% assign tag_names = include.tag_names %}
+
+        {% else %}
+          {% assign tag_names = "" | split: "|"  %}
+
+          {% for posts_by_tag in site.tags %}
+            {% assign tag_names = tag_names | push: posts_by_tag.first %}
+          {% endfor %}
+
+          {% assign tag_names = tag_names | sort %}
+        {% endif %}
+        <nav class="tags">
+          <span>Tag</span>
+          <ul>
+            {% for tag_name in tag_names %}
+              <li><a href="{{ site.baseurl }}/tags/#{{ tag_name }}">{{ tag_name }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+
+        {% if include.category_names %}
+          {% assign category_names = include.category_names %}
+
+        {% else %}
+          {% assign category_names = "" | split: "|"  %}
+
+          {% for category in site.categories %}
+            {% assign category_names = category_names | push: category.first %}
+          {% endfor %}
+
+          {% assign category_names = category_names | sort %}
+        {% endif %}
+        <nav class="category">
+          <span>Category</span>
+          <ul>
+            {% for category in category_names %}
+              <li><a href="{{ site.baseurl }}/categories#{{category | escape}}">{{category |  escape}}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
       </div>
     </div>
 
