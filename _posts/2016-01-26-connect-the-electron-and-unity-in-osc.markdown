@@ -2,7 +2,14 @@
 layout: post
 title:  "electronとUnityをOSCで繋いでみた"
 date:   2016-01-26 15:45:16
-categories: node.js es6 react electron unity osc
+category: Unity
+tags:
+    - Electron
+    - Unity
+    - node.js
+    - React
+    - ES6
+    - OSC
 ---
 
 <p align="center">

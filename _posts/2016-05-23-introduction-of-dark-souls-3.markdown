@@ -2,7 +2,10 @@
 layout: post
 title:  "Dark Souls3 - 王たちに王座なし"
 date:   2016-05-23 12:00:00
-categories: game ps4 darksouls
+category: Game
+tags:
+    - DarkSoul
+    - PS4
 ---
 
 ふと上を見上げると、 **Dark Souls** も Part3 までリリースされ、このダークファンタジーをまだプレイさせてくれて、なんて我々は貴公に寵愛されているんだと考えてしまう今日このごろいかがお過ごしでしょうか？

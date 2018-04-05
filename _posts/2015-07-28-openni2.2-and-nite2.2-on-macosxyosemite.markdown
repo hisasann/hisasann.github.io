@@ -2,7 +2,12 @@
 layout: post
 title:  "MacOSでOpenNI2.2・NiTE2.2を使ってXtionを動かしてみた"
 date:   2015-07-28 15:45:16
-categories: mac opneni2 nite2 xtion
+category: OpenNI
+tags:
+    - Mac
+    - OpenNI2
+    - NITE2
+    - Xtion
 ---
 
 **Xtion** を使って、OpneNIを体感してみましたが、思いのほかハマったのでメモメモ。

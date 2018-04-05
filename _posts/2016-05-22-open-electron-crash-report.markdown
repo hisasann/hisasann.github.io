@@ -2,7 +2,14 @@
 layout: post
 title:  "electronのcrashReport(minidump)をMacOSXで見てみるまでのメモ"
 date:   2016-05-22 12:00:00
-categories: node.js electron minidump macos vmware ubuntu
+category: Electron
+tags:
+    - Electron
+    - minidump
+    - Mac
+    - VMWare
+    - node.js
+    - ubuntu
 ---
 
 いつの間にか electron も **v1** が出てきて、いつの間にか **crashReporter** のパラメータに必須なものが追加されていたので、その crashReporter で送信される中身を覗いてみました。

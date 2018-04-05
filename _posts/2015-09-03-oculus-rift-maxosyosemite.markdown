@@ -2,7 +2,9 @@
 layout: post
 title:  "MacOSYosemiteでOculus Riftを動かしてみた（2015/09/03時点）"
 date:   2015-09-03 15:45:16
-categories: mac oculus 
+category: Oculus
+tags:
+    - Oculus
 ---
 
 **Oculus** を使って、遊んでみようと思ったのですが、もうすでに公式サイトではMacOS用の **runtime** と **sdk** が配布されなくなっていたので、

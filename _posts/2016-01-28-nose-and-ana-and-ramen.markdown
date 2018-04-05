@@ -2,7 +2,9 @@
 layout: post
 title:  "鼻とアナとらーめん"
 date:   2016-01-28 15:45:16
-categories: document
+category: Nikki
+tags:
+    - Ramen
 ---
 
 <p align="center">

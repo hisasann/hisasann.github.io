@@ -2,7 +2,11 @@
 layout: post
 title:  "C#からWindows上のボリュームと輝度を変更する方法"
 date:   2017-07-30 12:00:00
-categories: C# windows visualstudio
+category: C#
+tags:
+    - C#
+    - Windows
+    - VisualStudio
 ---
 
 意外とまとまった情報がなかったのでここにメモしておきます。

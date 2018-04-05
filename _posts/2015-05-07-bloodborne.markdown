@@ -2,7 +2,9 @@
 layout: post
 title:  "Bloodborne（ブラッドボーン）をクリアしたので雑感"
 date:   2015-05-07 15:45:16
-categories: mac kiosk chrome
+category: Game
+tags:
+    - bloodborne
 ---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RKptPGvUhfQ" frameborder="0" allowfullscreen></iframe>

@@ -2,7 +2,13 @@
 layout: post
 title:  "ウィンドウレスなコンソールアプリをnode.jsのchild_process経由で実行し結果を受け取る方法"
 date:   2017-09-25 12:00:00
-categories: node.js windows c# visualstudio console
+category: node.js
+tags:
+    - node.js
+    - Windows
+    - C#
+    - VisualStudio
+    - Console
 ---
 
 ## やりたいこと

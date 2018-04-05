@@ -2,8 +2,13 @@
 layout: post
 title:  "Macの起動時にChromeをキオスク(kiosk)モードで開く方法"
 date:   2015-04-23 15:45:16
-categories: mac kiosk chrome
+category: Chrome
+tags:
+    - Mac
+    - kiosk
+    - Chrome
 ---
+
 こんな感じのシェルを *.sh* ファイルを作っておいて、
 
 <script src="https://gist.github.com/hisasann/3d55441c7f1e59df2171.js"></script>

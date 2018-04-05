@@ -2,7 +2,13 @@
 layout: post
 title:  "Oculus RiftとWebブラウザで体感するWebVRの世界（環境設定編）"
 date:   2015-09-04 15:45:16
-categories: mac oculus webgl webvr three.js
+category: Oculus
+tags:
+    - Oculus
+    - WebGL
+    - WebVR
+    - three.js
+    - Mac
 ---
 
 **Oculus** と **WebGL** を連携して遊べることは知っていたのですが、実際やるとなかなかハマりどころもあるので、

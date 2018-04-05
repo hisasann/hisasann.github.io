@@ -2,7 +2,12 @@
 layout: post
 title:  "AWS-CLIのsync機能でローカルファイルをS3に同期させる"
 date:   2017-05-15 12:00:00
-categories: aws s3 sync log
+category: AWS
+tags:
+    - AWS
+    - S3
+    - Sync
+    - Log
 ---
 
 ## pip のサイトからインストールスクリプトをダウンロードし実行する

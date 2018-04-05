@@ -2,7 +2,13 @@
 layout: post
 title:  "GoogleGlassを今更ながら検証してみました in 2018"
 date:   2018-02-25 12:00:00
-categories: googleglass android ble webrtc webcam
+category: GoogleGlass
+tags:
+    - GoogleGlass
+    - Android
+    - BLE
+    - WebRTC
+    - webcam
 ---
 
 ## やりたいこと

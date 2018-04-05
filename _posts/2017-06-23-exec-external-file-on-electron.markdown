@@ -2,7 +2,11 @@
 layout: post
 title:  "Windows上でelectronに内包したexeを実行する方法"
 date:   2017-06-23 12:00:00
-categories: electron nodejs exe
+category: Electron
+tags:
+    - Electron
+    - node.js
+    - electron-builder
 ---
 
 ## まえがき

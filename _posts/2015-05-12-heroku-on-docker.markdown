@@ -2,7 +2,13 @@
 layout: post
 title:  "Herokuのdockerツールを使ってみた"
 date:   2015-05-12 15:45:16
-categories: mac docker heroku express node.js
+category: Heroku
+tags:
+    - Mac
+    - docker
+    - Heroku
+    - express
+    - node.js
 ---
 
 [Herokuの'docker:release'の動き |

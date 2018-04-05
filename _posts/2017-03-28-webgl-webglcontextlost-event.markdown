@@ -2,7 +2,12 @@
 layout: post
 title:  "WebGLのwebglcontextlostイベントについての考察"
 date:   2017-03-28 12:00:00
-categories: electron webgl webcontextlost canvas
+category: Electron
+tags:
+    - WebGL
+    - Electron
+    - WebGLContextLost
+    - Canvas
 ---
 
 ## はじめに

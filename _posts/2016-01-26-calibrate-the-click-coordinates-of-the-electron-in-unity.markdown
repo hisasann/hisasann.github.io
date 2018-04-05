@@ -2,7 +2,14 @@
 layout: post
 title:  "electronのクリック座標をキャリブレーションしてUnity世界で何かする"
 date:   2016-01-26 15:46:16
-categories: node.js es6 react electron unity osc
+category: Unity
+tags:
+    - Electron
+    - Unity
+    - node.js
+    - ES6
+    - React
+    - OSC
 ---
 
 <p align="center">
