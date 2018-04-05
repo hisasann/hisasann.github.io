@@ -2,7 +2,12 @@
 layout: post
 title:  "Linebotで遊んでみた"
 date:   2016-05-01 12:00:00
-categories: line linebot node.js heroku
+category: Line
+tags:
+    - Line
+    - Linebot
+    - node.js
+    - Heroku
 ---
 
 <p align="center">

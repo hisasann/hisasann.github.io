@@ -2,7 +2,12 @@
 layout: post
 title:  "子プロセス内でfs.readFileに相対パスを渡したときの挙動について"
 date:   2017-09-08 12:00:00
-categories: node.js windows electron
+category: Electron
+tags:
+    - node.js
+    - Electron
+    - Windows
+    - child_process
 ---
 
 ## まえがき

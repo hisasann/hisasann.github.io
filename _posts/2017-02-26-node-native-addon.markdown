@@ -2,7 +2,12 @@
 layout: post
 title:  "node-gypまたはnanを使ってnative addonを作る方法"
 date:   2017-02-26 12:00:00
-categories: node.js mac gyp addon nan
+category: node.js
+tags:
+    - node-gyp
+    - nan
+    - Electron
+    - Mac
 ---
 
 ## はじめに

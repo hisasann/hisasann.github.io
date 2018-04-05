@@ -2,7 +2,14 @@
 layout: post
 title:  "kinect2をelectron上で動かすまでの記録"
 date:   2016-03-02 12:00:00
-categories: kinect2 electron python node-gyp visual-studio node.js
+category: Kinect
+tags:
+    - Kinect2
+    - Electron
+    - Python
+    - node-gyp
+    - VisualStudio
+    - node.js
 ---
 
 ## はじめに

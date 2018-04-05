@@ -2,7 +2,12 @@
 layout: post
 title:  "Mac上でelectronをビルドしCentOSでFullscreen表示するまで"
 date:   2017-05-21 12:00:00
-categories: electron centos nodejs virtualbox
+category: Electron
+tags:
+    - CentOS
+    - Electron
+    - VirtualBox
+    - node.js
 ---
 
 ## まえがき

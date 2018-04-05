@@ -2,7 +2,12 @@
 layout: post
 title:  "Amazon Dash ButtonとUnityをOSCで繋いでみた"
 date:   2016-12-22 12:00:00
-categories: node.js unity osc iot
+category: Unity
+tags:
+    - Unity
+    - AmazonDashButton
+    - OSC
+    - IoT
 ---
 
 <p align="center">

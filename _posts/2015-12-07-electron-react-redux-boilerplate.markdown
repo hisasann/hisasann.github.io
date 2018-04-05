@@ -2,7 +2,15 @@
 layout: post
 title:  "React・Reduxを使ったElectronアプリのboilerplateを作ってみました"
 date:   2015-12-07 15:45:16
-categories: node.js babel6 es6 react redux webpack gulp electron
+category: Electron
+tags:
+    - Electron
+    - React
+    - Redux
+    - Webpack
+    - Gulp
+    - node.js
+    - ES6
 ---
 
 [hisasann/electron-react-redux-boilerplate](https://github.com/hisasann/electron-react-redux-boilerplate)

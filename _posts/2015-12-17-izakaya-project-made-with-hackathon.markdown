@@ -2,7 +2,14 @@
 layout: post
 title:  "ハッカソンでWebSocketを使ったガチャサイトを作ってみた"
 date:   2015-12-17 15:45:16
-categories: node.js es6 react gulp pixi.js create.js hackathon
+category: Hackathon
+tags:
+    - node.js
+    - ES6
+    - React
+    - Gulp
+    - Pixi.js
+    - Create.js
 ---
 
 # 居酒屋プロジェクト

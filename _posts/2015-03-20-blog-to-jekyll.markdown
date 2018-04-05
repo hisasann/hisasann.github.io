@@ -2,7 +2,10 @@
 layout: post
 title:  "Jekyllを使ってブログを書いていく"
 date:   2015-03-20 15:45:16
-categories: jekyll blog github
+category: blog
+tags:
+    - jekyll
+    - github
 ---
 なんとなく思い立って **github** でブログを書きはじめて見る。
 

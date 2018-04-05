@@ -2,7 +2,11 @@
 layout: post
 title:  "BitBarにtrelloのcardを表示してタスク管理する"
 date:   2016-05-18 12:00:00
-categories: node.js bitbar trello
+category: Trello
+tags:
+    - Trello
+    - bitbar
+    - node.js
 ---
 
 タスク管理は **trello** を使っていて、 iOS アプリもあるので、すごく使いやすいんですが、 Today のタスクも稀にやり忘れるときがあるので、 **BitBar** に表示することにしました。

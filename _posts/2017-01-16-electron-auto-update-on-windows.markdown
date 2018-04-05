@@ -2,7 +2,11 @@
 layout: post
 title:  "electronのautoUpdaterをWindows上で試したときのメモ"
 date:   2017-01-15 12:00:00
-categories: node.js electron windows
+category: Electron
+tags:
+    - Electron
+    - Windows
+    - AutoUpdate
 ---
 
 ## はじめに
