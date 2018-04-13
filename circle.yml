@@ -4,10 +4,10 @@ machine:
     USER_NAME: hisasann
     USER_EMAIL: hisasann@gmail.com
   ruby:
-    version: 2.1.0
+    version: 2.5.1
 dependencies:
     override:
-      - bundle install --without production --deployment
+      - bundle install
 test:
   override:
     - bundle exec jekyll build --trace
