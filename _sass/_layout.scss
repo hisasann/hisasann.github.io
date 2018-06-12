@@ -239,3 +239,21 @@
         }
     }
 }
+
+.post-content > table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 15px;
+}
+
+.post-content > table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+    font-weight: 600;
+}
+
+.post-content > table td {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
