@@ -139,18 +139,27 @@ github: [hisasann/5x5-routine-generator: For do muscle training](https://github.
 
 ### BIG3
 
-* ベンチプレス: 72.5 kg
-* デッドリフト: 110 kg
+* ベンチプレス: 62.5 kg（5x5法にしたため重量が下がった）
+* デッドリフト: 100 kg
 * スクワット: 80 kg
 
 ---
-https://youtu.be/Vixlj_tUxxs?t=505
+
 ## 10月
+
+### HMB を買ってみた
+
+
+### デッドリフト 110 kg 上がった！
+
+
+### 重量を減らしてフォームを意識して効かせる方法にシフト
+
 
 ### BIG3
 
-* ベンチプレス: 75 kg
-* デッドリフト: 105 kg
+* ベンチプレス: 65 kg
+* デッドリフト: 110 kg
 * スクワット: 90 kg
 
 ---
