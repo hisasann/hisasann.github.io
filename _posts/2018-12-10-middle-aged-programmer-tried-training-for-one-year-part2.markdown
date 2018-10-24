@@ -168,7 +168,7 @@ github: [hisasann/5x5-routine-generator: For do muscle training](https://github.
 
 ### BIG3
 
-* ベンチプレス: 77.5 kg
+* ベンチプレス: 75 kg
 * デッドリフト: 110 kg
 * スクワット: 95 kg
 
