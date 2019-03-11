@@ -1,10 +1,10 @@
 gems: [jekyll-paginate]
 
 # Site settings
-title: DJレモンサワーのレモン日記
+title: DJ lemon-Sour's diary (prod.hisasann)
 email: ""
 description: > # this means to ignore newlines until "baseurl:"
-  レモンサワーとプログラムの日記
+  DJ lemon-Sour's diary (prod.hisasann)
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://hisasann.github.io/" # the base hostname & protocol for your site
 twitter_username: hisasann
