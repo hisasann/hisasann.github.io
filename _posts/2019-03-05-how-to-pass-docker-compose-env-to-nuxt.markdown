@@ -64,7 +64,7 @@ fs.copyFile(`.env.${process.argv[2]}`, '.env', err => {
 })
 ```
 
-[typescript-nuxtjs/preprocessor.js at master · hisasann/typescript-nuxtjs](https://github.com/hisasann/typescript-nuxtjs/blob/master/preprocessor.js)
+[typescript-nuxtjs-boilerplate/preprocessor.js at master · hisasann/typescript-nuxtjs-boilerplate](https://github.com/hisasann/typescript-nuxtjs-boilerplate/blob/master/preprocessor.js)
 
 
 ## Nuxt.js の env とは
@@ -197,6 +197,8 @@ export default (ctx) => {
 ここまでして、ランタイム時に環境変数を渡すのもなかなかだなーと思いつつ、とはいえ Dockerfile を環境ごとに作るのもなーという感じです。
 
 まだ、いろいろ試してみておりますので、また何か発見しましたら追記します！
+
+[hisasann/typescript-nuxtjs-boilerplate: Nuxt.js with typescript and run with docker and docker-compose](https://github.com/hisasann/typescript-nuxtjs-boilerplate)
 
 
 ## 読んだ記事
