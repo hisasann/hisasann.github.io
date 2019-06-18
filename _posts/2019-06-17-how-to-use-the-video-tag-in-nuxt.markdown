@@ -88,7 +88,7 @@ test: /\.(ogg|mp3|wav|mpe?g)$/i
 test: /\.(ogg|mp3|mp4|wav|mpe?g)$/i
 ```
 
-こうすると、 [206 Partial Content - HTTP | MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Status/206) が返ってきてしまいました。
+こうすると、 [206 Partial Content - HTTP MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Status/206) が返ってきてしまいました。
 
 察するに file-loader が mp4 コンテンツをよしなにしてくれた結果なのかなーと予想しています。
 
