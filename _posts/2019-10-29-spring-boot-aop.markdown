@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "[再入門]SpringBootで学ぶDI(Dependency injection)とAOP(アスペクト指向)"
-date:   2019-10-31 12:00:00
+title:  "SpringBootで学ぶDI(Dependency injection)とAOP(アスペクト指向)"
+date:   2019-10-29 12:00:00
 category: Java
 tags:
     - AOP
