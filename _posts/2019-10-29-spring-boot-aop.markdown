@@ -305,12 +305,12 @@ Starting a Gradle Daemon (subsequent builds will be faster)
 2019-10-30 18:00:15.127  INFO 60888 --- [           main] aop.AOPMain                              : Starting AOPMain on LAB-N1584.local with PID 60888 (/Users/hisamatsu/_/js-code/gs-gradle/initial/build/classes/java/main started by hisamatsu in /Users/hisamatsu/_/js-code/gs-gradle/initial)
 2019-10-30 18:00:15.130  INFO 60888 --- [           main] aop.AOPMain                              : No active profile set, falling back to default profiles: default
 2019-10-30 18:00:15.888  INFO 60888 --- [           main] aop.AOPMain                              : Started AOPMain in 1.129 seconds (JVM running for 1.438)
-AOPController2クラスのuploadFileメソッドを開始します
-uploadFile2
-AOPController2クラスのuploadFileメソッドを終了します
-AOPController2クラスのdownloadFileメソッドを開始します
-downloadFile2
-AOPController2クラスのdownloadFileメソッドを終了します
+AOPControllerクラスのuploadFileメソッドを開始します
+uploadFile
+AOPControllerクラスのuploadFileメソッドを終了します
+AOPControllerクラスのdownloadFileメソッドを開始します
+downloadFile
+AOPControllerクラスのdownloadFileメソッドを終了します
 ```
 
 こうみると、たしかにオブジェクト指向ではカバーしきれなかった部分をうまくアスペクト指向が補っている感がありますよね。
