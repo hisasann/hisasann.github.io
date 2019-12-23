@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "ぼくの人生に影響をあたえた映画10選"
-date:   2019-10-23 01:00:00
+date:   2019-12-23 01:00:00
 category: Movie
 tags:
     - Movie
