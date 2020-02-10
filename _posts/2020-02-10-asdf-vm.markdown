@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "asdf-vmで各言語のバージョン管理をしてみた🧞‍♀️"
+date:   2020-02-10 01:00:00
+category: Shell
+tags:
+    - Shell
+---
+
+## 🦑 まえがき
+
+言語ごとのバージョン管理は、どうしても大変で、 node.js であれば `nvm` や `nodebrew` を使っていましたしが、 ruby では `rbenv` を使っていました。
+
+割とツールがいろいろ増えてきたので、一つにまとめたいと思い、 **asdf** を使い始めてみました。
+
+## 🐶 asdfをインストールする
+
+[Manage asdf-vm - asdf vm - An extendable version manager](https://asdf-vm.com/#/core-manage-asdf-vm)
+
+```bash
+$ brew install asdf
+```
+
+のちのち `~/.asdf` ディレクトリが必要になってくるので、
+
+```bash
+$ git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+```
+
+も実行しておく。
+
+## 🍔 Homebrewで必要なモジュールをインストールする
+
+```bash
+$ brew install \
+  coreutils automake autoconf openssl \
+  libyaml readline libxslt libtool unixodbc \
+  unzip curl
+```
+
+## 🔫 asdf-nodejsをインストールする
+
+必須となるモジュールを Homebrew でインストールします。
+
+```bash
+$ brew install coreutils
+$ brew install gpg
+```
+
+Install the plugin:
+
+```bash
+$ asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+```
+
+Import the Node.js release team's OpenPGP keys to main keyring:
+
+```bash
+$ bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+```
+
+[asdf-vm/asdf-nodejs: Node.js plugin for asdf version manager](https://github.com/asdf-vm/asdf-nodejs)
+
+## 🪓 nodejsをインストールする
+
+```bash
+$ asdf install nodejs 12.15.0
+$ asdf global nodejs 12.15.0
+$ asdf reshim nodejs
+```
+
+[Manage Versions - asdf vm - An extendable version manager](https://asdf-vm.com/#/core-manage-versions)
+
+## 🏋🏻‍♂️ nodejsのバージョンチェックする
+
+```bash
+$ node -v
+v12.15.0
+```
+
+## 🍜 雑感
+
+いまのところ問題がなく、そこまでハマってないので、おそらく今後はこれを使っていくと思います。
+
+それでは良い node.js life を🎅🎄！
+
+## 🧙 参考記事
+
+[Manage asdf-vm - asdf vm - An extendable version manager](https://asdf-vm.com/#/core-manage-asdf-vm?id=plugin-dependencies)
+
+[Manage Versions - asdf vm - An extendable version manager](https://asdf-vm.com/#/core-manage-versions)
