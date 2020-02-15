@@ -13,6 +13,14 @@
   <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
+  <link rel="manifest" href="./manifest.json">
+  <script>
+    // service workerが有効なら、service-worker.js を登録します
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./public/javascripts/service-worker.js').then(function() { console.log('Service Worker Registered'); });
+    }
+  </script>
+
   <link rel="shortcut icon" href="/public/images/favicon.ico" type="image/vnd.microsoft.icon" />
   <link rel="stylesheet" href="{{ "/public/stylesheets/main.css" | prepend: site.baseurl }}" />
   <!--<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">-->

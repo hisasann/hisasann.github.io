@@ -1,0 +1,16 @@
+{
+  "name": "DJ lemon-Sour",
+  "short_name": "lemon-Sour",
+  "background_color": "#fc980c",
+  "icons": [{
+    "src": "./public/images/hisasann-256.jpg",
+    "sizes": "256x256",
+    "type": "image/jpeg"
+  },{
+    "src": "./public/images/hisasann-192.jpg",
+    "sizes": "192x192",
+    "type": "image/jpeg"
+  }],
+  "start_url": "./?utm_source=homescreen",
+  "display": "standalone"
+}
