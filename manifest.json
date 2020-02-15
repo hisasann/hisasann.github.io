@@ -3,13 +3,13 @@
   "short_name": "lemon-Sour",
   "background_color": "#fc980c",
   "icons": [{
-    "src": "./public/images/hisasann-256.jpg",
+    "src": "./public/images/hisasann-256.png",
     "sizes": "256x256",
-    "type": "image/jpeg"
+    "type": "image/png"
   },{
-    "src": "./public/images/hisasann-192.jpg",
+    "src": "./public/images/hisasann-192.png",
     "sizes": "192x192",
-    "type": "image/jpeg"
+    "type": "image/png"
   }],
   "start_url": ".",
   "display": "standalone"
