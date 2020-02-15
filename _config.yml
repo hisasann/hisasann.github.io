@@ -6,7 +6,7 @@ email: ""
 description: > # this means to ignore newlines until "baseurl:"
   DJ lemon-Sour's diary (prod.hisasann)
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://hisasann.github.io/" # the base hostname & protocol for your site
+url: "https://hisasann.github.io/" # the base hostname & protocol for your site
 twitter_username: hisasann
 github_username:  hisasann
 repository: hisasann/hisasann.github.io
