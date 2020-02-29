@@ -1,0 +1,93 @@
+---
+layout: post
+title:  "Netlifyとお名前.comとLet's Encryptでhttpsなサイト作る🍦"
+date:   2020-02-28 01:00:00
+category: Netlify
+tags:
+    - Netlify
+    - https
+    - github
+    - domain
+---
+
+## 🦑 まえがき
+
+`.dev` ドメインが流行っている感（たとえばここ [React Native · A framework for building native apps using React](https://reactnative.dev/)）があったので、こうゆうのは勢いが大事なので取ってしまっただよ。
+
+[hisasann.dev](https://hisasann.dev/)
+
+## お名前.comでドメインを取る
+
+欲しいドメインを選んでお会計までしておきます。
+
+[お名前.com Navi](https://navi.onamae.com/top)
+
+今回ぼくは `hisasann.dev` が欲しかったので、こちらを購入。
+
+また、 `Whois` の代行もしてもらえるようにちょっとお金も払いました。（+300円）
+
+## Netlify
+
+### githubにリポジトリ作成
+
+Netlify にデプロイするための、素材を一旦用意してデプロイ出来たら確認するための .html ファイルだけ置いています。（いまのところ）
+
+[hisasann/hisasann.dev](https://github.com/hisasann/hisasann.dev)
+
+### Netlify側で確認してお名前.comに反映
+
+こちらをまずは Netlify 側で見て、メモしておきます。
+
+### DNS records
+
+CNAME
+
+```
+hisasann.dev ALIAS xxxxxxxxxx.netlify.com
+```
+
+Aレコード
+
+```
+hisasann.dev A xxx.xxx.xx.xx
+```
+
+### Nameservers
+
+```
+dns1.xxx.xxxxx.net
+dns2.xxx.xxxxx.net
+dns3.xxx.xxxxx.net
+dns4.xxx.xxxxx.net
+
+```
+
+### お名前.com
+
+ネームサーバーの設定 -> DNSレコード設定
+
+に、`Aレコード` と `CNAME` を追加します。
+
+ネームサーバーの設定 -> ネームサーバーの変更 -> 他社のネームサーバーを利用
+
+に、 `Nameservers` を入れていく。
+
+[hisasann.dev](https://hisasann.dev/)
+
+### HTTPS - SSL/TLS certificate
+
+Netlify で Domain management -> Domains -> HTTPS -> SSL/TLS certificate で
+
+Verify DNS configrationをクリックし `Let's Encypt certificate` をクリックします。
+
+これで、 HTTPS 化できました！
+
+## 参考記事
+
+[NetlifyとGithubで独自ドメインのサイトをHTTPS化したメモ - magchoの雑記](https://blog.magcho.com/netlify%E3%81%A8github%E3%81%A7%E7%8B%AC%E8%87%AA%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%81%AE%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92https%E5%8C%96%E3%81%97%E3%81%9F%E3%83%A1%E3%83%A2/)
+
+## 🍜 あとがき
+
+ドメイン取るのほんと久しぶりだったのですが、 HTTPS 化まで楽にできるのは本当にありがたいですね。
+
+Netlify と Let's Encypt ありがとう！🌷
